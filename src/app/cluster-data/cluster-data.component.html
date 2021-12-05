@@ -1,5 +1,8 @@
 
 <div class="container" *ngFor="let cloudzone of cloudzones">
+  <div>
+    <span class="title">{{cloudzone.Description}} ({{cloudzone.CloudZone}})</span>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <clr-datagrid>
