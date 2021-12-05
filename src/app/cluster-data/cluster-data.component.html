@@ -1,0 +1,57 @@
+
+<div class="container" *ngFor="let cloudzone of cloudzones">
+  <div class="row">
+    <div class="col-md-12">
+      <clr-datagrid>
+        <clr-dg-column [clrDgField]="'Provisioning Status'">Provisioning Status</clr-dg-column>
+        <clr-dg-column [clrDgField]="'Name'" [clrDgField]="'Name'">Cluster</clr-dg-column>
+        <clr-dg-column [clrDgField]="'HostCount'" [clrDgColType]="'number'">Hosts</clr-dg-column>
+        <clr-dg-column [clrDgField]="'Memory Free %'" [clrDgColType]="'number'">Memory Free (%)</clr-dg-column>
+        <clr-dg-column [clrDgField]="'Memory Free (GiB)'" [clrDgColType]="'number'">Memory Free (GiB)</clr-dg-column>
+        <clr-dg-column [clrDgField]="'CPU Ratio (vCPU:pCPU)'" [clrDgColType]="'number'">CPU Ratio (vCPU:pCPU)</clr-dg-column>
+        <clr-dg-column [clrDgField]="'Disk Free %'" [clrDgColType]="'number'">Disk Free (%)</clr-dg-column>
+        <clr-dg-column [clrDgField]="'Disk Free (TiB)'" [clrDgColType]="'number'">Disk Free (TiB)</clr-dg-column>
+        <clr-dg-row *clrDgItems="let subItem of cloudzone.Clusters">
+          <clr-dg-cell>
+            <span class="label label-info" [ngClass]="{
+              'label-success': subItem['Provisioning Status'] === 'enabled',
+              'label-warning': subItem['Provisioning Status'] === 'disabled',
+              'label-danger': subItem['Provisioning Status'] === 'admin-disabled'}"
+              >{{subItem["Provisioning Status"]}}
+            </span>
+          </clr-dg-cell>
+          <clr-dg-cell>{{subItem['Name']}}</clr-dg-cell>
+          <clr-dg-cell>{{subItem['HostCount']}}</clr-dg-cell>
+          <clr-dg-cell>{{subItem['Memory Free %']}}</clr-dg-cell>
+          <clr-dg-cell>{{subItem['Memory Free (GiB)']}}</clr-dg-cell>
+          <clr-dg-cell>{{subItem['CPU Ratio (vCPU:pCPU)']}} to 1</clr-dg-cell>
+          <clr-dg-cell>{{subItem['Disk Free %']}}</clr-dg-cell>
+          <clr-dg-cell>{{subItem['Disk Free (TiB)']}}</clr-dg-cell>
+        </clr-dg-row>
+        <clr-dg-footer>
+          <clr-dg-pagination #pagination [clrDgPageSize]="10">
+            <clr-dg-page-size [clrPageSizeOptions]="[10,20,30]"></clr-dg-page-size>
+          </clr-dg-pagination>
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} Clusters
+        </clr-dg-footer>
+      </clr-datagrid>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- two layer list -->
+
+<!-- <div>
+  <ol>
+    <li *ngFor="let cloudzone of cloudzones">
+      <div>{{cloudzone.Description}}</div>
+      <ol>
+        <li *ngFor="let subItem of cloudzone.Clusters">
+          <div>{{subItem.Name}}</div>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</div> -->
