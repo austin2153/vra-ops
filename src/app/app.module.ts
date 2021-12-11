@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClusterDataComponent } from './cluster-data/cluster-data.component';
-import { ClusterDataService } from 'src/services/cluster-data.service';
+import { ClusterDataService } from './services/cluster-data.service';
 
 
 @NgModule({

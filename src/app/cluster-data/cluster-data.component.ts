@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ClusterDataService } from 'src/services/cluster-data.service';
+import { ClusterDataService } from '../services/cluster-data.service';
+
 
 @Component({
   selector: 'app-cluster-data',
