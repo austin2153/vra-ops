@@ -1283,9 +1283,10 @@ export class ClusterDataComponent implements OnInit {
     }
  ]
   public clustersFromService = {};
+
   constructor(private clusterdataService: ClusterDataService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
      this.clustersFromService = this.clusterdataService.getClusters();
   }
 

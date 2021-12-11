@@ -7,7 +7,7 @@ export class ClusterDataService {
 
   constructor() { }
 
-  clusters = [
+  public clusters = [
     {
       "CloudZone":"usljv04xp2vcawir1002.fiserv.one / usljv04-w2-dc",
       "Description":"Production Lewisville",
