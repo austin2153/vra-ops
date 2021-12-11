@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClusterDataComponent } from './cluster-data/cluster-data.component';
 import { ClusterDataService } from './services/cluster-data.service';
 import { HeaderComponent } from './components/header/header.component';
+import { CdsModule } from '@cds/angular';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CdsModule
   ],
   providers: [ClusterDataService],
   bootstrap: [AppComponent]

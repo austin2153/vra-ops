@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClusterDataService } from '../services/cluster-data.service';
+import '@cds/core/button/register.js';
+
 
 
 @Component({
