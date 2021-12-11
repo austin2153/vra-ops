@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {ClrDatagridSortOrder} from '@clr/angular';
+import { ClusterDataService } from 'src/services/cluster-data.service';
 
 @Component({
   selector: 'app-cluster-data',
   templateUrl: './cluster-data.component.html',
-  styleUrls: ['./cluster-data.component.css']
+  styleUrls: ['./cluster-data.component.css'],
+  providers: [ClusterDataComponent]
 })
 
 
@@ -1280,12 +1281,13 @@ export class ClusterDataComponent implements OnInit {
        ]
     }
  ]
-
-  constructor() { }
+  public clustersFromService = {};
+  constructor(private clusterdataService: ClusterDataService) { }
 
   ngOnInit(): void {
+     this.clustersFromService = this.clusterdataService.getClusters();
   }
 
-  
+
 
 }
