@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import '@cds/core/icon/register.js';
+import { ClarityIcons, clusterIcon } from '@cds/core/icon';
+ClarityIcons.addIcons(clusterIcon);
 
 @Component({
   selector: 'app-header',

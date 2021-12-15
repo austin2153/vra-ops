@@ -8,13 +8,15 @@ import { ClusterDataComponent } from './cluster-data/cluster-data.component';
 import { ClusterDataService } from './services/cluster-data.service';
 import { HeaderComponent } from './components/header/header.component';
 import { CdsModule } from '@cds/angular';
+import { VmManagementComponent } from './components/vm-management/vm-management.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ClusterDataComponent,
-    HeaderComponent
+    HeaderComponent,
+    VmManagementComponent
   ],
   imports: [
     BrowserModule,

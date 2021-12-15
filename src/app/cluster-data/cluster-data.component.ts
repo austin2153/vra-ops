@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ClusterDataService } from '../services/cluster-data.service';
 import '@cds/core/button/register.js';
-
-
+import '@cds/core/divider/register.js';
+import '@cds/core/button/register.js';
+import '@cds/core/icon/register.js';
+import { ClarityIcons, userIcon } from '@cds/core/icon';
+ClarityIcons.addIcons(userIcon);
 
 @Component({
   selector: 'app-cluster-data',
@@ -13,6 +16,7 @@ import '@cds/core/button/register.js';
 
 
 export class ClusterDataComponent implements OnInit {
+
   cloudzones = [
     {
        "CloudZone":"usljv04xp2vcawir1002.fiserv.one / usljv04-w2-dc",
